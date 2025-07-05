@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  background-color: #121212;
+  color: #eee;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  overflow: auto; /* ← デフォルトではスクロール可 */
+  flex-direction: column;
+  user-select: none;
+}
+
+#app {
+  width: 90vw;
+  max-width: 600px;
+}
+
+#settings {
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto;        /* ← ブロック要素中央揃え */
+}
+
+#settings:not(.hidden) {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+#itemInputs input {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+  background: #222;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px;
+}
+
+canvas {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #000;
+}
+
+button {
+  background-color: #5c2d91;  /* 紫系 */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #7f4db9;  /* 少し明るい紫 */
+}
+
+#rouletteArea button {
+  margin: 10px;
+  padding: 8px 16px;
+}
+
+#rouletteAreaButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#clearSettings {
+  background-color: #555;      /* 濃いグレー */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#clearSettings:hover {
+  background-color: #777;       /* ホバー時は少し明るく */
+}
+
+select {
+  background-color: #333;  /* ダークグレー */
+  color: #fff;
+  border: 1px solid #555;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#itemInputs input {
+  width: 90%;
+  max-width: 200px;
+  /* text-align: center; */
+}
+
+.flash {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.flash.show {
+  animation: flashAnimation 2.5s ease forwards;
+}
+
+@keyframes flashAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+

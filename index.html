@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ルーレットアプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="flashMessage" class="flash hidden"></div>
+  <div id="app">
+    <div id="settings">
+      <h2>ルーレット設定</h2>
+      <button id="startButton">ルーレット開始</button><br>
+      <button id="clearSettings">設定初期化</button><br>
+      <label>カラーテーマ：
+        <select id="colorTheme">
+          <option value="vivid">原色</option>
+          <option value="pastel">パステル</option>
+          <option value="gray">グレースケール</option>
+          <option value="warm">暖色系</option>
+          <option value="cool">寒色系</option>
+        </select>
+      </label><br>
+      <label>焦らし具合：
+        <select id="frictionLevel">
+          <option value="slow">焦らす</option>
+          <option value="normal" selected>普通</option>
+          <option value="fast">あっさり</option>
+        </select>
+      </label><br>
+      <label>項目数：
+        <select id="itemCount">
+          <!-- 2〜12 -->
+        </select>
+      </label><br>
+      <div id="itemInputs"></div>
+    </div>
+
+    <div id="rouletteArea" class="hidden">
+      <canvas id="wheelCanvas"></canvas>
+      <div id="rouletteAreaButtons">
+        <button id="retryButton">もう一回</button>
+        <button id="backButton">設定に戻る</button>
+      </div>
+      <div id="resultDisplay"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
